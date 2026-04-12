@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RiskOracle | Quantum-Noir Predictive Observatory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <span class="material-symbols-outlined">radar</span>
+                    Risk<span>Oracle</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span>Command Center</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#factors" class="nav-link">
+                        <span class="material-symbols-outlined">query_stats</span>
+                        <span>Risk Analysis</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">
+                        <span class="material-symbols-outlined">account_balance</span>
+                        <span>Loan Portfolio</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-title">
+                    <p class="reveal delay-1">Observation Sector 01</p>
+                    <h1 class="reveal delay-2">Risk Prediction Observatory</h1>
+                </div>
+                <div class="status-badge reveal delay-3">
+                    <div class="status-dot"></div>
+                    Live Feed Active
+                </div>
+            </header>
+
+            <div id="dashboard" class="dashboard-grid">
+                <!-- Main Result Node -->
+                <section class="card result-card glass reveal delay-4">
+                    <div class="card-header">
+                        <div class="card-id-info">
+                            Application ID: <span id="appId" class="app-id-code">RO-PENDING</span>
+                        </div>
+                        <div id="computedTime" class="computed-time">--:-- --</div>
+                    </div>
+
+                    <div class="result-display">
+                        <div class="gauge-container">
+                            <svg class="gauge-svg" viewBox="0 0 240 240">
+                                <circle class="gauge-track" cx="120" cy="120" r="110"></circle>
+                                <circle id="progressCircle" class="gauge-progress" cx="120" cy="120" r="110"></circle>
+                            </svg>
+                            <div class="gauge-content">
+                                <span id="confidenceScore" class="gauge-value">--</span>
+                                <span class="gauge-label">Confidence</span>
+                            </div>
+                        </div>
+
+                        <div class="verdict-info">
+                            <div id="verdictText" class="verdict-badge">Pending</div>
+                            <h2 id="riskLevel" class="verdict-title">Waiting for Scan</h2>
+                            <p id="oracleQuote" class="verdict-desc">The predictive engine is idle. Input applicant data
+                                to begin the high-precision risk assessment protocol.</p>
+
+                            <div class="verdict-stats-grid">
+                                <div class="stat-group-mini">
+                                    <span class="stat-label-mini">Exposure</span>
+                                    <span id="exposure" class="stat-value-mid">₹--,---</span>
+                                </div>
+                                <div class="stat-group-mini">
+                                    <span class="stat-label-mini">Duration</span>
+                                    <span id="durationDisplay" class="stat-value-mid accent">-- Months</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Risk Factors Sidebar -->
+                <section id="factors" class="card factors-card glass reveal delay-5">
+                    <h3 class="factors-title">
+                        <span class="material-symbols-outlined">query_stats</span>
+                        Risk Factors
+                    </h3>
+
+                    <div class="factor-item">
+                        <div class="factor-header">
+                            <span class="factor-name">Credit Stability</span>
+                            <span id="creditVal" class="factor-value">--</span>
+                        </div>
+                        <div class="progress-track">
+                            <div id="creditBar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="factor-item">
+                        <div class="factor-header">
+                            <span class="factor-name">Collateral Coverage</span>
+                            <span id="collateralVal" class="factor-value">--</span>
+                        </div>
+                        <div class="progress-track">
+                            <div id="collateralBar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="factor-item">
+                        <div class="factor-header">
+                            <span class="factor-name">Market Volatility</span>
+                            <span id="volatilityVal" class="factor-value volatility-accent">--</span>
+                        </div>
+                        <div class="progress-track">
+                            <div id="volatilityBar" class="progress-bar volatility-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="insight-container">
+                        <div class="insight-header">
+                            <span class="material-symbols-outlined insight-icon">lightbulb</span>
+                            <span class="insight-label">Insight Engine</span>
+                        </div>
+                        <p id="insightText" class="insight-text">
+                            Quantum models are standing by for live data ingestion...</p>
+                    </div>
+                </section>
+
+                <!-- Input Panel -->
+                <section class="card form-card glass reveal delay-6">
+                    <h3>Applicant Data Ingestion</h3>
+                    <p>Complete the matrix below to generate a predictive risk score.</p>
+
+                    <form id="loanForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Applicant Age</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="age" placeholder="25-65" min="18" max="100" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Annual Income (₹)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="income" placeholder="e.g. 75000" min="0" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Loan Amount (₹)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="loan_amount" placeholder="e.g. 250000" min="0" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Credit History</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" name="credit_history" id="credit_good" value="Good" checked>
+                                        <label for="credit_good">STABLE</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" name="credit_history" id="credit_poor" value="Poor">
+                                        <label for="credit_poor">VOLATILE</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Duration (Months)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="duration" placeholder="Months" value="36" min="1" max="360"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group metric-config-row">
+                                <div class="stat-group-mini">
+                                    <label>Metric Display</label>
+                                    <div class="metric-display-labels">
+                                        <span id="growthMetric">--</span> / <span id="sensitivityMetric">--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="reset" class="btn-secondary">Reset Matrix</button>
+                                <button type="submit" class="btn-primary">Scan Applicant</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Loan Portfolio Section -->
+            <section id="portfolio" class="card glass reveal portfolio-section delay-7">
+                <h3 class="portfolio-title">
+                    <span class="material-symbols-outlined color-secondary">account_balance</span>
+                    Loan Portfolio Overview
+                </h3>
+                <div id="statsContent" class="stat-display-grid">
+                    <div class="stat-mini-card">
+                        <span class="stat-mini-label">Total Applications</span>
+                        <span id="statAssets" class="stat-mini-value color-primary">--</span>
+                    </div>
+                    <div class="stat-mini-card">
+                        <span class="stat-mini-label">Market Approval Rate</span>
+                        <span id="statRate" class="stat-mini-value color-green">--</span>
+                    </div>
+                    <div class="stat-mini-card">
+                        <span class="stat-mini-label">Avg Applicant Income</span>
+                        <span id="statIncome" class="stat-mini-value color-secondary">₹ --</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
