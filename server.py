@@ -50,7 +50,7 @@ def get_data_stats():
             "total_samples": len(df),
             "approval_rate": round(df['Approval'].mean() * 100, 1),
             "avg_income": round(df['Income'].mean(), 0),
-            "preview": df.head(5).to_dict(orient='records')
+            "preview": df.head(20).to_dict(orient='records')
         }
     return {}
 
@@ -72,6 +72,7 @@ def predict():
         age = float(data.get('age', 30))
         income = float(data.get('income', 50000))
         loan_amount = float(data.get('loan_amount', 10000))
+        duration = float(data.get('duration', 36))
         credit_history = 1 if data.get('credit_history') == 'Good' else 0
         
         # Simple logistic regression prediction
@@ -95,6 +96,17 @@ def predict():
         
         # Calculate DTI (Debt-to-income) ratio
         dti = (loan_amount / income * 100) if income > 0 else 0
+
+        # Calculate monthly EMI with 10.5% prime rate
+        annual_rate = 0.105
+        monthly_rate = annual_rate / 12.0
+        n_months = max(1.0, duration)
+        if monthly_rate > 0:
+            emi = (loan_amount * monthly_rate * ((1 + monthly_rate) ** n_months)) / (((1 + monthly_rate) ** n_months) - 1)
+        else:
+            emi = loan_amount / n_months
+        total_payment = emi * n_months
+        total_interest = max(0.0, total_payment - loan_amount)
         
         return jsonify({
             "status": "success",
@@ -102,6 +114,9 @@ def predict():
             "probability": round(probability, 4),
             "result_text": "Approved" if prediction == 1 else "Rejected",
             "dti": round(dti, 2),
+            "emi": round(emi, 2),
+            "total_interest": round(total_interest, 2),
+            "total_payment": round(total_payment, 2),
             "message": "Model evaluation complete."
         })
     except Exception as e:

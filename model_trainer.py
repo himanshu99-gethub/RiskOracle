@@ -5,7 +5,6 @@ from sklearn.linear_model import LogisticRegression
 import joblib
 import os
 
-# Remove old pickle file if it exists
 if os.path.exists('loan_model.pkl'):
     os.remove('loan_model.pkl')
     print("Removed old pickle file")

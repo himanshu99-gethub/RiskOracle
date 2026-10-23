@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 import sys
 print("Test script started", file=sys.stdout, flush=True)
 print("Python version:", sys.version, file=sys.stdout, flush=True)

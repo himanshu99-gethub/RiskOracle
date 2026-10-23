@@ -3,237 +3,758 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>RiskOracle | Quantum-Noir Predictive Observatory</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RiskOracle | Consumer Loan Risk Observatory & Predictive Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-    <div class="app-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo-container">
-                <a href="#" class="logo">
-                    <span class="material-symbols-outlined">radar</span>
-                    Risk<span>Oracle</span>
+    <!-- Subtle SVG Topography Background -->
+    <svg class="topography-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <path d="M-100,200 C300,100 600,350 1000,150 C1300,-10 1500,280 1600,200" fill="none" stroke="rgba(90, 132, 126, 0.12)" stroke-width="2"/>
+        <path d="M-50,350 C350,220 700,500 1150,280 C1450,110 1550,420 1650,320" fill="none" stroke="rgba(90, 132, 126, 0.08)" stroke-width="1.5"/>
+        <path d="M-80,520 C280,450 650,680 1050,490 C1380,330 1520,620 1620,530" fill="none" stroke="rgba(241, 118, 35, 0.06)" stroke-width="1.5"/>
+    </svg>
+
+    <div class="site-wrapper">
+        <!-- Site Header Navigation -->
+        <header class="site-header">
+            <div class="nav-container">
+                <a href="#" class="brand-logo">
+                    <div class="logo-badge">
+                        <span>†</span>
+                    </div>
+                    <span>Risk<span class="oracle">Oracle</span></span>
                 </a>
-            </div>
 
-            <ul class="nav-links">
-                <li class="nav-item">
-                    <a href="#dashboard" class="nav-link active">
-                        <span class="material-symbols-outlined">dashboard</span>
-                        <span>Command Center</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#factors" class="nav-link">
-                        <span class="material-symbols-outlined">query_stats</span>
-                        <span>Risk Analysis</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#portfolio" class="nav-link">
-                        <span class="material-symbols-outlined">account_balance</span>
-                        <span>Loan Portfolio</span>
-                    </a>
-                </li>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active">Loans</a></li>
+                    <li><a href="#options" class="nav-link">Loan Options</a></li>
+                    <li><a href="#dashboard" class="nav-link">Risk Assessment</a></li>
+                    <li><a href="#factors" class="nav-link">Factor Analysis</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio Data</a></li>
+                </ul>
 
-            </ul>
-
-        </aside>
-
-        <!-- Main Workspace -->
-        <main class="main-content">
-            <header class="top-bar">
-                <div class="header-title">
-                    <p class="reveal delay-1">Observation Sector 01</p>
-                    <h1 class="reveal delay-2">Risk Prediction Observatory</h1>
-                </div>
-                <div class="status-badge reveal delay-3">
-                    <div class="status-dot"></div>
-                    Live Feed Active
-                </div>
-            </header>
-
-            <div id="dashboard" class="dashboard-grid">
-                <!-- Main Result Node -->
-                <section class="card result-card glass reveal delay-4">
-                    <div class="card-header">
-                        <div class="card-id-info">
-                            Application ID: <span id="appId" class="app-id-code">RO-PENDING</span>
-                        </div>
-                        <div id="computedTime" class="computed-time">--:-- --</div>
+                <div class="nav-actions">
+                    <div class="status-pill">
+                        <span class="status-dot-pulse"></span>
+                        <span>Live Feed Active</span>
                     </div>
+                    <a href="#dashboard" class="btn-nav-cta">
+                        <span>Assess Risk</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </header>
 
-                    <div class="result-display">
-                        <div class="gauge-container">
-                            <svg class="gauge-svg" viewBox="0 0 240 240">
-                                <circle class="gauge-track" cx="120" cy="120" r="110"></circle>
-                                <circle id="progressCircle" class="gauge-progress" cx="120" cy="120" r="110"></circle>
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Banner: Consumer Loans & Real-Time Decisioning -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span>Predictive Underwriting Engine</span>
+                    </div>
+                    <h1 class="hero-title">We Are Consumer Loans. Get Started Online Today!</h1>
+                    
+                    <ul class="hero-benefits-list">
+                        <li class="hero-benefit-item">
+                            <span class="benefit-icon">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>Secured Loans Up To ₹10,00,000*</span>
+                        </li>
+                        <li class="hero-benefit-item">
+                            <span class="benefit-icon">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>Pre-Qualify With No Impact To Your Credit Score</span>
+                        </li>
+                        <li class="hero-benefit-item">
+                            <span class="benefit-icon">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>Option To Apply And Close Online in Minutes*</span>
+                        </li>
+                        <li class="hero-benefit-item">
+                            <span class="benefit-icon">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span>Instant Sigmoid Probability & Factor Stress Analysis</span>
+                        </li>
+                    </ul>
+
+                    <div class="hero-cta-group">
+                        <a href="#dashboard" class="btn-primary-teal">
+                            <span>Get Started</span>
+                            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
-                            <div class="gauge-content">
-                                <span id="confidenceScore" class="gauge-value">--</span>
-                                <span class="gauge-label">Confidence</span>
+                        </a>
+                        <a href="#portfolio" class="btn-secondary-outline">Explore Observatory</a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Composite with Floating Pill Stats -->
+                <div class="hero-visual-wrapper">
+                    <!-- Layered Organic & Geometric Backdrops -->
+                    <div class="hero-backdrop-shape"></div>
+                    <div class="hero-backdrop-stripe-dark"></div>
+                    <div class="hero-backdrop-stripe-teal"></div>
+
+                    <!-- Borrower Photo Asset -->
+                    <div class="hero-photo-container">
+                        <img src="{{ url_for('static', filename='images/borrower_hero.jpg') }}" alt="Approved Borrower Celebrating Loan Success" />
+                    </div>
+
+                    <!-- Floating Metric Badges from User Reference Photo -->
+                    <div class="hero-stat-pill pill-teal">
+                        <strong>300k+</strong>
+                        <span>Active Customers</span>
+                    </div>
+
+                    <div class="hero-stat-pill pill-coral">
+                        <strong>225+</strong>
+                        <span>Branch Locations</span>
+                    </div>
+
+                    <div class="hero-stat-pill pill-apricot">
+                        <strong>65+</strong>
+                        <span>Years In Business</span>
+                    </div>
+
+                    <div class="hero-stat-pill pill-sand">
+                        <strong>₹400Cr+</strong>
+                        <span>Loaned Since 2005</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discover Your Loan Options Section (Directly from Reference Photo) -->
+            <section id="options" class="options-section">
+                <div class="section-header-centered">
+                    <h2>Discover Your Loan Options!</h2>
+                    <p>Helping our customers meet their financial needs with tailored risk-adjusted lending terms.</p>
+                </div>
+
+                <div class="loan-options-grid">
+                    <!-- Option 1: Secured Personal -->
+                    <div class="loan-option-card opt-teal active" data-preset="personal">
+                        <div>
+                            <div class="option-icon-box">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3>Secured Personal Loan</h3>
+                            <p>Versatile funds for home improvements, debt consolidation, and planned family milestones.</p>
+                        </div>
+                        <div class="option-footer-tag">
+                            <span>Up to ₹5,00,000</span>
+                            <span>• 12-60 Mo</span>
+                        </div>
+                    </div>
+
+                    <!-- Option 2: Vehicle & Auto -->
+                    <div class="loan-option-card opt-coral" data-preset="vehicle">
+                        <div>
+                            <div class="option-icon-box">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                                </svg>
+                            </div>
+                            <h3>Vehicle & Asset Loan</h3>
+                            <p>Competitive rates for two-wheeler, commercial, or four-wheeler acquisition with asset backing.</p>
+                        </div>
+                        <div class="option-footer-tag">
+                            <span>Up to ₹15,00,000</span>
+                            <span>• Curbside Closing</span>
+                        </div>
+                    </div>
+
+                    <!-- Option 3: Business Capital -->
+                    <div class="loan-option-card opt-apricot" data-preset="business">
+                        <div>
+                            <div class="option-icon-box">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <h3>Enterprise Liquidity</h3>
+                            <p>Working capital injection for small businesses, inventory procurement, and expansion.</p>
+                        </div>
+                        <div class="option-footer-tag">
+                            <span>Up to ₹25,00,000</span>
+                            <span>• Flexible Tenure</span>
+                        </div>
+                    </div>
+
+                    <!-- Option 4: Emergency Reserve -->
+                    <div class="loan-option-card opt-sand" data-preset="emergency">
+                        <div>
+                            <div class="option-icon-box">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h3>Emergency Buffer</h3>
+                            <p>Instant contingency credit line with expedited disbursement for healthcare or unforeseen needs.</p>
+                        </div>
+                        <div class="option-footer-tag">
+                            <span>Up to ₹2,50,000</span>
+                            <span>• Zero Prepay Fee</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Command Center & Assessment Layout -->
+            <section id="dashboard" class="observatory-section">
+                <div class="observatory-layout">
+                    <!-- Left: Ingestion & Input Matrix -->
+                    <div class="obs-card">
+                        <div class="card-topbar">
+                            <div class="card-title-group">
+                                <h2>Applicant Ingestion Matrix</h2>
+                                <p>Supply applicant financial profile to run logistic regression evaluation.</p>
+                            </div>
+                            <div class="pill-meta">
+                                <span>Engine: <code>Logistic Sigmoid</code></span>
                             </div>
                         </div>
 
-                        <div class="verdict-info">
-                            <div id="verdictText" class="verdict-badge">Pending</div>
-                            <h2 id="riskLevel" class="verdict-title">Waiting for Scan</h2>
-                            <p id="oracleQuote" class="verdict-desc">The predictive engine is idle. Input applicant data
-                                to begin the high-precision risk assessment protocol.</p>
-
-                            <div class="verdict-stats-grid">
-                                <div class="stat-group-mini">
-                                    <span class="stat-label-mini">Exposure</span>
-                                    <span id="exposure" class="stat-value-mid">₹--,---</span>
-                                </div>
-                                <div class="stat-group-mini">
-                                    <span class="stat-label-mini">Duration</span>
-                                    <span id="durationDisplay" class="stat-value-mid accent">-- Months</span>
-                                </div>
-                            </div>
+                        <!-- Quick Test Presets -->
+                        <div class="presets-bar">
+                            <span class="presets-label">Quick Scenarios:</span>
+                            <button type="button" class="preset-chip" data-age="35" data-income="125000" data-loan="28000" data-credit="Good" data-duration="36">High Liquidity (Approved)</button>
+                            <button type="button" class="preset-chip" data-age="42" data-income="68000" data-loan="35000" data-credit="Good" data-duration="24">Moderate Earner</button>
+                            <button type="button" class="preset-chip" data-age="22" data-income="24000" data-loan="85000" data-credit="Poor" data-duration="48">High DTI (Risk Warning)</button>
                         </div>
-                    </div>
-                </section>
 
-                <!-- Risk Factors Sidebar -->
-                <section id="factors" class="card factors-card glass reveal delay-5">
-                    <h3 class="factors-title">
-                        <span class="material-symbols-outlined">query_stats</span>
-                        Risk Factors
-                    </h3>
-
-                    <div class="factor-item">
-                        <div class="factor-header">
-                            <span class="factor-name">Credit Stability</span>
-                            <span id="creditVal" class="factor-value">--</span>
-                        </div>
-                        <div class="progress-track">
-                            <div id="creditBar" class="progress-bar"></div>
-                        </div>
-                    </div>
-
-                    <div class="factor-item">
-                        <div class="factor-header">
-                            <span class="factor-name">Collateral Coverage</span>
-                            <span id="collateralVal" class="factor-value">--</span>
-                        </div>
-                        <div class="progress-track">
-                            <div id="collateralBar" class="progress-bar"></div>
-                        </div>
-                    </div>
-
-                    <div class="factor-item">
-                        <div class="factor-header">
-                            <span class="factor-name">Market Volatility</span>
-                            <span id="volatilityVal" class="factor-value volatility-accent">--</span>
-                        </div>
-                        <div class="progress-track">
-                            <div id="volatilityBar" class="progress-bar volatility-bar"></div>
-                        </div>
-                    </div>
-
-                    <div class="insight-container">
-                        <div class="insight-header">
-                            <span class="material-symbols-outlined insight-icon">lightbulb</span>
-                            <span class="insight-label">Insight Engine</span>
-                        </div>
-                        <p id="insightText" class="insight-text">
-                            Quantum models are standing by for live data ingestion...</p>
-                    </div>
-                </section>
-
-                <!-- Input Panel -->
-                <section class="card form-card glass reveal delay-6">
-                    <h3>Applicant Data Ingestion</h3>
-                    <p>Complete the matrix below to generate a predictive risk score.</p>
-
-                    <form id="loanForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Applicant Age</label>
-                                <div class="input-wrapper">
-                                    <input type="number" id="age" placeholder="25-65" min="18" max="100" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Annual Income (₹)</label>
-                                <div class="input-wrapper">
-                                    <input type="number" id="income" placeholder="e.g. 75000" min="0" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Loan Amount (₹)</label>
-                                <div class="input-wrapper">
-                                    <input type="number" id="loan_amount" placeholder="e.g. 250000" min="0" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Credit History</label>
-                                <div class="radio-group">
-                                    <div class="radio-option">
-                                        <input type="radio" name="credit_history" id="credit_good" value="Good" checked>
-                                        <label for="credit_good">STABLE</label>
+                        <!-- Loan Application Form -->
+                        <form id="loanForm">
+                            <div class="input-grid">
+                                <!-- Age Input -->
+                                <div class="form-group">
+                                    <label for="age">
+                                        <span>Applicant Age</span>
+                                        <span class="label-hint">18 to 100 yrs</span>
+                                    </label>
+                                    <div class="field-wrapper">
+                                        <input type="number" id="age" class="field-input no-prefix" placeholder="e.g. 34" min="18" max="100" required />
                                     </div>
-                                    <div class="radio-option">
-                                        <input type="radio" name="credit_history" id="credit_poor" value="Poor">
-                                        <label for="credit_poor">VOLATILE</label>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Duration (Months)</label>
-                                <div class="input-wrapper">
-                                    <input type="number" id="duration" placeholder="Months" value="36" min="1" max="360"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="form-group metric-config-row">
-                                <div class="stat-group-mini">
-                                    <label>Metric Display</label>
-                                    <div class="metric-display-labels">
-                                        <span id="growthMetric">--</span> / <span id="sensitivityMetric">--</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="form-actions">
-                                <button type="reset" class="btn-secondary">Reset Matrix</button>
-                                <button type="submit" class="btn-primary">Scan Applicant</button>
+                                <!-- Duration Input -->
+                                <div class="form-group">
+                                    <label for="duration">
+                                        <span>Loan Tenure</span>
+                                        <span class="label-hint">12 to 84 months</span>
+                                    </label>
+                                    <div class="field-wrapper">
+                                        <input type="number" id="duration" class="field-input no-prefix" placeholder="e.g. 36" min="1" max="360" required />
+                                    </div>
+                                </div>
+
+                                <!-- Annual Income with Slider -->
+                                <div class="form-group">
+                                    <label for="income">
+                                        <span>Annual Income (₹)</span>
+                                        <span class="label-hint">Verified gross</span>
+                                    </label>
+                                    <div class="field-wrapper">
+                                        <span class="field-prefix">₹</span>
+                                        <input type="number" id="income" class="field-input" placeholder="e.g. 95000" min="1000" step="500" required />
+                                    </div>
+                                    <div class="slider-sync-group">
+                                        <input type="range" id="incomeSlider" class="range-slider" min="10000" max="300000" step="2500" value="10000" />
+                                        <div class="slider-scale-labels">
+                                            <span>₹10k</span>
+                                            <span>Sensitivity Slider</span>
+                                            <span>₹300k+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Loan Amount with Slider -->
+                                <div class="form-group">
+                                    <label for="loan_amount">
+                                        <span>Requested Amount (₹)</span>
+                                        <span class="label-hint">Principal sum</span>
+                                    </label>
+                                    <div class="field-wrapper">
+                                        <span class="field-prefix">₹</span>
+                                        <input type="number" id="loan_amount" class="field-input" placeholder="e.g. 32000" min="1000" step="500" required />
+                                    </div>
+                                    <div class="slider-sync-group">
+                                        <input type="range" id="loanSlider" class="range-slider" min="5000" max="150000" step="1000" value="5000" />
+                                        <div class="slider-scale-labels">
+                                            <span>₹5k</span>
+                                            <span>Sensitivity Slider</span>
+                                            <span>₹150k+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Credit History Switch (Segmented Radio) -->
+                                <div class="form-group">
+                                    <label>
+                                        <span>Credit History</span>
+                                        <span class="label-hint">Bureau standing</span>
+                                    </label>
+                                    <div class="credit-segmented-group">
+                                        <div class="credit-segmented-option">
+                                            <input type="radio" name="credit_history" id="credit_good" value="Good" checked />
+                                            <label for="credit_good">
+                                                <span>STABLE / GOOD</span>
+                                                <small>No delinquencies</small>
+                                            </label>
+                                        </div>
+                                        <div class="credit-segmented-option">
+                                            <input type="radio" name="credit_history" id="credit_poor" value="Poor" />
+                                            <label for="credit_poor">
+                                                <span>VOLATILE / POOR</span>
+                                                <small>Past defaults</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Live DTI Calculator Indicator -->
+                                <div class="form-group">
+                                    <label>
+                                        <span>DTI Exposure Ratio</span>
+                                        <span class="label-hint">Debt-to-Income</span>
+                                    </label>
+                                    <div class="dti-live-panel">
+                                        <div>
+                                            <div class="dti-title">Current Ratio</div>
+                                            <div class="dti-sub">Loan / Annual pay</div>
+                                        </div>
+                                        <div id="dtiLiveVal" class="dti-gauge-badge">--%</div>
+                                    </div>
+                                </div>
+
+                                <!-- Live EMI & Amortization Calculator Widget -->
+                                <div class="form-group full-width">
+                                    <div class="emi-calculator-widget">
+                                        <div class="emi-widget-header">
+                                            <div class="emi-title-group">
+                                                <h4>Equated Monthly Installment (EMI) Breakdown</h4>
+                                                <p>Real-time amortized repayment based on tenure & interest bracket</p>
+                                            </div>
+                                            <div class="rate-pills-row">
+                                                <button type="button" class="rate-pill active" data-rate="10.5">10.5% Prime</button>
+                                                <button type="button" class="rate-pill" data-rate="12.5">12.5% Std</button>
+                                                <button type="button" class="rate-pill" data-rate="15.0">15.0% Risk</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="emi-metrics-grid">
+                                            <div class="emi-metric-card">
+                                                <span class="label">Monthly Payment</span>
+                                                <strong id="emiMonthly" class="value highlight-teal">₹ --</strong>
+                                            </div>
+                                            <div class="emi-metric-card">
+                                                <span class="label">Total Interest</span>
+                                                <strong id="emiInterest" class="value highlight-orange">₹ --</strong>
+                                            </div>
+                                            <div class="emi-metric-card">
+                                                <span class="label">Total Repayment</span>
+                                                <strong id="emiTotal" class="value">₹ --</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Form Actions -->
+                                <div class="form-actions-row">
+                                    <button type="reset" class="btn-form-reset">Reset Matrix</button>
+                                    <button type="submit" class="btn-form-submit">
+                                        <span>Scan Applicant Profile</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right: Live Verdict & Gauge Card -->
+                    <div class="obs-card verdict-card">
+                        <div class="card-topbar">
+                            <div class="card-title-group">
+                                <h2>Underwriting Decision</h2>
+                                <p>Real-time sigmoid confidence score</p>
+                            </div>
+                            <div class="pill-meta">
+                                <span>Ref: <code id="appId">RO-STANDBY</code></span>
                             </div>
                         </div>
-                    </form>
-                </section>
-            </div>
 
-            <!-- Loan Portfolio Section -->
-            <section id="portfolio" class="card glass reveal portfolio-section delay-7">
-                <h3 class="portfolio-title">
-                    <span class="material-symbols-outlined color-secondary">account_balance</span>
-                    Loan Portfolio Overview
-                </h3>
-                <div id="statsContent" class="stat-display-grid">
-                    <div class="stat-mini-card">
-                        <span class="stat-mini-label">Total Applications</span>
-                        <span id="statAssets" class="stat-mini-value color-primary">--</span>
+                        <div class="verdict-hero-center">
+                            <!-- Circular SVG Gauge -->
+                            <div class="gauge-visual-container">
+                                <svg class="gauge-svg-dial" viewBox="0 0 240 240">
+                                    <circle class="gauge-dial-track" cx="120" cy="120" r="110"></circle>
+                                    <circle id="progressCircle" class="gauge-dial-progress" cx="120" cy="120" r="110"></circle>
+                                </svg>
+                                <div class="gauge-inner-content">
+                                    <span id="confidenceScore" class="gauge-metric-number">--</span>
+                                    <span class="gauge-metric-label">Confidence</span>
+                                </div>
+                            </div>
+
+                            <div id="verdictText" class="verdict-badge-pill">Pending Scan</div>
+                            <h3 id="riskLevel" class="verdict-headline">Waiting For Applicant Input</h3>
+                            <p id="oracleQuote" class="verdict-explanation">Input applicant financial coordinates or select a scenario preset to run the mathematical risk evaluation protocol.</p>
+
+                            <!-- Exposure & Duration Stats -->
+                            <div class="verdict-meta-grid">
+                                <div class="verdict-meta-box">
+                                    <span class="verdict-meta-label">Total Principal Exposure</span>
+                                    <span id="exposure" class="verdict-meta-val">₹--,---</span>
+                                </div>
+                                <div class="verdict-meta-box">
+                                    <span class="verdict-meta-label">Amortization Horizon</span>
+                                    <span id="durationDisplay" class="verdict-meta-val teal-tone">-- Months</span>
+                                </div>
+                            </div>
+
+                            <!-- Export Official Sanction Letter Button -->
+                            <button type="button" id="btnSanctionLetter" class="btn-export-sanction">
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>Export Sanction Letter (PDF)</span>
+                            </button>
+                        </div>
+
+                        <!-- Card Footer Timestamp -->
+                        <div style="font-size: 0.78rem; color: var(--ink-muted); text-align: right; padding-top: 0.75rem; border-top: 1px solid var(--border-subtle);">
+                            Computed: <span id="computedTime" style="font-weight: 600; color: var(--ink-secondary);">--:-- --</span>
+                        </div>
                     </div>
-                    <div class="stat-mini-card">
-                        <span class="stat-mini-label">Market Approval Rate</span>
-                        <span id="statRate" class="stat-mini-value color-green">--</span>
+                </div>
+            </section>
+
+            <!-- Factor Analysis & Insight Engine Panel -->
+            <section id="factors" class="factors-section">
+                <div class="factors-grid">
+                    <!-- 3 Factor Breakdown Bars & XAI Attribution -->
+                    <div class="factor-bars-card">
+                        <div class="card-topbar" style="margin-bottom: 1.25rem;">
+                            <div class="card-title-group">
+                                <h2>Risk Factor Breakdown</h2>
+                                <p>Multi-dimensional stress testing of credit parameters</p>
+                            </div>
+                        </div>
+
+                        <div class="factor-row">
+                            <div class="factor-header-row">
+                                <span class="factor-name-label">Credit Stability Ratio</span>
+                                <span id="creditVal" class="factor-percentage-val">--%</span>
+                            </div>
+                            <div class="factor-track-bar">
+                                <div id="creditBar" class="factor-fill-bar"></div>
+                            </div>
+                        </div>
+
+                        <div class="factor-row">
+                            <div class="factor-header-row">
+                                <span class="factor-name-label">Collateral & Income Coverage</span>
+                                <span id="collateralVal" class="factor-percentage-val">--%</span>
+                            </div>
+                            <div class="factor-track-bar">
+                                <div id="collateralBar" class="factor-fill-bar"></div>
+                            </div>
+                        </div>
+
+                        <div class="factor-row">
+                            <div class="factor-header-row">
+                                <span class="factor-name-label">Market Volatility Exposure</span>
+                                <span id="volatilityVal" class="factor-percentage-val volatility">--%</span>
+                            </div>
+                            <div class="factor-track-bar">
+                                <div id="volatilityBar" class="factor-fill-bar volatility"></div>
+                            </div>
+                        </div>
+
+                        <!-- Explainable AI (XAI) Attribution Breakdown -->
+                        <div class="xai-contributions-list">
+                            <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); margin-bottom: 0.2rem;">
+                                Feature Contributions (XAI Logit Attribution)
+                            </div>
+                            <div class="xai-factor-item">
+                                <span class="xai-factor-title">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    Credit History Stability
+                                </span>
+                                <span id="xaiCredit" class="xai-factor-badge positive">+48.5% Lift</span>
+                            </div>
+                            <div class="xai-factor-item">
+                                <span class="xai-factor-title">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    Annual Verified Liquidity
+                                </span>
+                                <span id="xaiIncome" class="xai-factor-badge positive">+22.1% Lift</span>
+                            </div>
+                            <div class="xai-factor-item">
+                                <span class="xai-factor-title">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg>
+                                    Principal Obligation Scale
+                                </span>
+                                <span id="xaiLoan" class="xai-factor-badge negative">-14.2% Drag</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-mini-card">
-                        <span class="stat-mini-label">Avg Applicant Income</span>
-                        <span id="statIncome" class="stat-mini-value color-secondary">₹ --</span>
+
+                    <!-- Insight Engine Commentary -->
+                    <div class="insight-engine-card">
+                        <div>
+                            <div class="insight-header-top">
+                                <div class="insight-icon-bubble">
+                                    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                </div>
+                                <div class="card-title-group">
+                                    <h2>Insight Engine</h2>
+                                    <p>Automated Underwriting Synthesis</p>
+                                </div>
+                            </div>
+                            <p id="insightText" class="insight-content-text">
+                                The predictive scoring model evaluates historical repayment variance, debt servicing ratios, and collateral coverage to establish default probabilities. Run an applicant scan to generate synthesis.
+                            </p>
+                        </div>
+
+                        <div class="metric-duo-bar">
+                            <div class="metric-duo-item">
+                                <span class="lbl">Portfolio Growth Rating</span>
+                                <span id="growthMetric" class="val">--</span>
+                            </div>
+                            <div class="metric-duo-item">
+                                <span class="lbl">Macro Sensitivity Index</span>
+                                <span id="sensitivityMetric" class="val">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loan Portfolio Overview Section -->
+            <section id="portfolio" class="portfolio-section">
+                <div class="section-header-centered" style="margin-bottom: 2rem;">
+                    <h2>Loan Portfolio Observatory</h2>
+                    <p>Live aggregates across active consumer loan applications in database.</p>
+                </div>
+
+                <div class="portfolio-stats-grid">
+                    <div class="portfolio-kpi-card">
+                        <span class="kpi-label">Total Applications Evaluated</span>
+                        <div id="statAssets" class="kpi-big-value teal-color">1,001 Records</div>
+                        <span class="kpi-subtext">Active cohort data</span>
+                    </div>
+
+                    <div class="portfolio-kpi-card">
+                        <span class="kpi-label">Market Approval Rate</span>
+                        <div id="statRate" class="kpi-big-value green-color">64.2%</div>
+                        <span class="kpi-subtext">Approved under standard criteria</span>
+                    </div>
+
+                    <div class="portfolio-kpi-card">
+                        <span class="kpi-label">Average Applicant Income</span>
+                        <div id="statIncome" class="kpi-big-value orange-color">₹ 1,03,420</div>
+                        <span class="kpi-subtext">Annual verified compensation</span>
+                    </div>
+                </div>
+
+                <!-- Recent Model Ingestions Table with Live Search, Filter & CSV Export -->
+                <div class="data-table-card">
+                    <div class="table-header-group">
+                        <div>
+                            <h3>Historical Loan Evaluations</h3>
+                            <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.15rem;">Live searchable records from <code>loan_data.csv</code></p>
+                        </div>
+                    </div>
+
+                    <!-- Toolbar -->
+                    <div class="table-toolbar">
+                        <div class="table-filter-group">
+                            <button type="button" class="filter-pill-btn active" data-filter="all">All Records</button>
+                            <button type="button" class="filter-pill-btn" data-filter="approved">Approved Only</button>
+                            <button type="button" class="filter-pill-btn" data-filter="rejected">Rejected Only</button>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: center;">
+                            <input type="text" id="tableSearch" class="table-search-input" placeholder="Search by age or income..." />
+                            <button type="button" id="btnExportCSV" class="btn-csv-export">
+                                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                <span>Export CSV</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Age</th>
+                                    <th>Annual Income</th>
+                                    <th>Requested Loan</th>
+                                    <th>Credit History</th>
+                                    <th>Model Verdict</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentTableBody">
+                                <tr>
+                                    <td>56 Yrs</td>
+                                    <td>₹ 1,25,186</td>
+                                    <td>₹ 27,017</td>
+                                    <td>Stable / Good</td>
+                                    <td><span class="table-tag good">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>69 Yrs</td>
+                                    <td>₹ 54,674</td>
+                                    <td>₹ 77,707</td>
+                                    <td>Stable / Good</td>
+                                    <td><span class="table-tag good">Approved</span></td>
+                                </tr>
+                                <tr>
+                                    <td>60 Yrs</td>
+                                    <td>₹ 93,688</td>
+                                    <td>₹ 30,426</td>
+                                    <td>Volatile / Poor</td>
+                                    <td><span class="table-tag bad">Rejected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>25 Yrs</td>
+                                    <td>₹ 1,89,590</td>
+                                    <td>₹ 18,778</td>
+                                    <td>Volatile / Poor</td>
+                                    <td><span class="table-tag bad">Rejected</span></td>
+                                </tr>
+                                <tr>
+                                    <td>38 Yrs</td>
+                                    <td>₹ 1,31,076</td>
+                                    <td>₹ 46,241</td>
+                                    <td>Stable / Good</td>
+                                    <td><span class="table-tag good">Approved</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
         </main>
+
+        <!-- Official Sanction Letter Modal -->
+        <div id="sanctionModal" class="modal-overlay">
+            <div class="modal-dialog">
+                <div class="modal-header-bar">
+                    <h3>Formal Institutional Credit Assessment</h3>
+                    <button type="button" id="modalCloseBtn" class="modal-close-btn">&times;</button>
+                </div>
+                <div class="modal-body-scroll">
+                    <div class="sanction-doc-header">
+                        <div>
+                            <div class="sanction-seal">
+                                <span style="background: #111; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem;">†</span>
+                                <span>RiskOracle Underwriting Group</span>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.2rem;">Automated Credit Assessment & Pre-Qualification Sanction Letter</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <span id="sanctionAppId" style="font-weight: 800; font-family: var(--font-heading); font-size: 1.1rem; color: var(--accent-teal);">RO-00000</span>
+                            <div id="sanctionDate" style="font-size: 0.78rem; color: var(--ink-muted);">Date: Oct 23, 2026</div>
+                        </div>
+                    </div>
+
+                    <p>Dear Applicant,</p>
+                    <p style="margin: 0.5rem 0 1rem;">
+                        Following our multi-tier quantitative underwriting evaluation using our calibrated Logistic Sigmoid Classifier, we are pleased to confirm your pre-qualification sanction status as outlined below:
+                    </p>
+
+                    <table class="sanction-table">
+                        <tbody>
+                            <tr>
+                                <td class="label">Underwriting Decision</td>
+                                <td id="sanctionVerdict" style="font-weight: 800; color: var(--status-approved-text);">APPROVED (Prime Low-Risk)</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Sanctioned Principal Amount</td>
+                                <td id="sanctionPrincipal" style="font-weight: 700;">₹ 32,000</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Repayment Tenure</td>
+                                <td id="sanctionTenure">36 Months</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Indicative Interest Rate</td>
+                                <td id="sanctionRate">10.5% Annualized APR</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Monthly Equated Installment (EMI)</td>
+                                <td id="sanctionEMI" style="font-weight: 800; color: var(--accent-teal);">₹ 1,040 / month</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Debt-To-Income (DTI) Ratio</td>
+                                <td id="sanctionDTI">33.7% (Within Safe Institutional Limit)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: var(--surface-muted); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--ink-muted);">
+                        <strong>Underwriting Stipulations:</strong> Disbursement is subject to final KYC verification and income documentation corroboration. Sanction validity extends for 30 calendar days from the issuance timestamp.
+                    </div>
+
+                    <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--ink-muted); font-weight: 700;">Authorized Algorithmic Signature</div>
+                            <div style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: var(--accent-teal); margin-top: 0.2rem;">RiskOracle Underwriting Matrix v2.4</div>
+                        </div>
+                        <div style="border-top: 1.5px solid var(--ink-primary); width: 140px; text-align: center; font-size: 0.72rem; color: var(--ink-muted); padding-top: 0.25rem;">
+                            Digital Sanction Seal
+                        </div>
+                    </div>
+                </div>
+                <div class="sanction-footer-actions">
+                    <button type="button" id="btnModalClose" class="btn-form-reset">Close</button>
+                    <button type="button" id="btnPrintSanction" class="btn-form-submit">
+                        <span>Print / Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clean Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-copy">
+                    <strong>RiskOracle</strong> • Consumer Loan Risk Assessment Engine • Calibrated with Scikit-learn Logistic Sigmoid Classifier
+                </div>
+                <div class="footer-tags">
+                    <a href="#hero" class="footer-tag-item">Top of Observatory</a>
+                    <a href="#dashboard" class="footer-tag-item">Assessment Matrix</a>
+                    <a href="#options" class="footer-tag-item">Loan Options</a>
+                    <a href="#portfolio" class="footer-tag-item">Portfolio Records</a>
+                </div>
+            </div>
+        </footer>
     </div>
 
+    <!-- Script Execution -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
