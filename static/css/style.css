@@ -2008,6 +2008,144 @@ body::before {
 }
 
 /* ==========================================================================
+   EXTRACTED SEMANTIC STYLES (ELIMINATING INLINE STYLES)
+   ========================================================================== */
+.result-timestamp-footer {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    text-align: right;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.result-timestamp-footer .timestamp-value {
+    font-weight: 600;
+    color: var(--ink-secondary);
+}
+
+.factor-card-topbar {
+    margin-bottom: 1.25rem;
+}
+
+.xai-heading {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    margin-bottom: 0.2rem;
+}
+
+.portfolio-section-header {
+    margin-bottom: 2rem;
+}
+
+.table-subtitle {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 0.15rem;
+}
+
+.table-search-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.sanction-cross-seal {
+    background: #111;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.sanction-doc-subtitle {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-top: 0.2rem;
+}
+
+.sanction-meta-right {
+    text-align: right;
+}
+
+.sanction-app-id {
+    font-weight: 800;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent-teal);
+}
+
+.sanction-date {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+}
+
+.sanction-salutation-body {
+    margin: 0.5rem 0 1rem;
+}
+
+.sanction-verdict {
+    font-weight: 800;
+    color: var(--status-approved-text);
+}
+
+.sanction-principal {
+    font-weight: 700;
+}
+
+.sanction-emi {
+    font-weight: 800;
+    color: var(--accent-teal);
+}
+
+.sanction-stipulations-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--surface-muted);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+}
+
+.sanction-signatures-row {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sanction-sig-meta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 700;
+}
+
+.sanction-sig-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-teal);
+    margin-top: 0.2rem;
+}
+
+.sanction-sig-stamp {
+    border-top: 1.5px solid var(--ink-primary);
+    width: 140px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+    padding-top: 0.25rem;
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1080px) {
